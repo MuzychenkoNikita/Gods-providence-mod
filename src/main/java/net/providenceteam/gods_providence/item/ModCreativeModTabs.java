@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.providenceteam.gods_providence.GodsProvidence;
+import net.providenceteam.gods_providence.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -18,6 +19,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.gods_providence_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.TITANIUM.get());
+                        pOutput.accept(ModBlocks.TITANIUM_BLOCK.get());
                     })
                     .build());
 

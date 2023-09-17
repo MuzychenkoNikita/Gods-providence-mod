@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "gods_providence:titanium"
+    }
+  },
+  "result": {
+    "item": "gods_providence:titanium_block"
+  }
+}

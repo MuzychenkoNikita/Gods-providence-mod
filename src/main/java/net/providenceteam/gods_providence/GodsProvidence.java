@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.providenceteam.gods_providence.block.ModBlocks;
 import net.providenceteam.gods_providence.item.ModCreativeModTabs;
 import net.providenceteam.gods_providence.item.ModItems;
 import org.slf4j.Logger;
@@ -33,6 +34,7 @@ public class GodsProvidence
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.registers(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
