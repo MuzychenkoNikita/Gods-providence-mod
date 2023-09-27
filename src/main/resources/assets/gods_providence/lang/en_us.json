@@ -1,7 +1,9 @@
 {
   "item.gods_providence.titanium": "Titanium",
+  "item.gods_providence.dreams_water_bucket": "Dreams Bucket",
 
   "block.gods_providence.titanium_block": "Titanium Block",
+  "block.gods_providence.wet_sand": "Wet Sand",
 
   "creativetab.gods_providence_tab": "God's Providence"
 }

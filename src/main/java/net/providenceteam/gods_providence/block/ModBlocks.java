@@ -5,12 +5,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.providenceteam.gods_providence.GodsProvidence;
+import net.providenceteam.gods_providence.fluid.ModFluids;
 import net.providenceteam.gods_providence.item.ModItems;
 
 import java.util.function.Supplier;
@@ -22,6 +25,16 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TITANIUM_BLOCK = registryBlock("titanium_block",
             () -> new Block((BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))));
+
+    public static final RegistryObject<Block> WET_SAND = registryBlock("wet_sand",
+            () -> new Block((BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK))));
+
+
+
+
+
+    public static final RegistryObject<LiquidBlock> DREAMS_WATER_BLOCK = BLOCKS.register("dreams_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_DREAMS_WATER, BlockBehaviour.Properties.copy(Blocks.LAVA)));
 
 
 

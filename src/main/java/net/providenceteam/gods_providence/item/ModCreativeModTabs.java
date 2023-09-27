@@ -20,6 +20,8 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.TITANIUM.get());
                         pOutput.accept(ModBlocks.TITANIUM_BLOCK.get());
+                        pOutput.accept(ModBlocks.WET_SAND.get());
+                        pOutput.accept(ModItems.DREAMS_WATER_BUCKET.get());
                     })
                     .build());
 

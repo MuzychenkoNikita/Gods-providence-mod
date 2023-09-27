@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gods_providence:item/dreams_water_bucket"
+  }
+}

@@ -1,7 +1,8 @@
 package net.providenceteam.gods_providence;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,8 +15,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.providenceteam.gods_providence.block.ModBlocks;
+import net.providenceteam.gods_providence.fluid.ModFluidTypes;
+import net.providenceteam.gods_providence.fluid.ModFluids;
 import net.providenceteam.gods_providence.item.ModCreativeModTabs;
 import net.providenceteam.gods_providence.item.ModItems;
+import net.providenceteam.gods_providence.world.dimension.ModDimensions;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -35,6 +39,11 @@ public class GodsProvidence
 
         ModItems.registers(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
+        ModDimensions.register();
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -60,11 +69,11 @@ public class GodsProvidence
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_DREAMS_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.DREAMS_WATER.get(), RenderType.translucent());
         }
     }
 }
